@@ -1,24 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const images = document.querySelectorAll('.parallax-image');
 	const thumbnails = document.querySelectorAll('.thumbnail-section img');
+	const thumbnailSection = document.querySelectorAll('.thumbnail-section');
 	var currentIndex = -1;
 
 	function imageSelect(index) {
 		let targetThumb = thumbnails[index];
 		let targetImage = images[index];
-		let prevThumb = thumbnails[currentIndex];
 		
 		if (targetImage) {
 			// Smooth scroll to the selected image
 			window.scrollTo({
 				top: targetImage.offsetTop + 30, // Adjust for header height
-				behavior: 'smooth'
+				behavior: 'instant'
 			});
 		}
-		// Update the active thumbnail only on refresh, 
-		// otherwise scroll callback updates it.
-		if (currentIndex == -1)
+		// Update the active thumbnail 
+		if (currentIndex == -1) {
 			targetThumb.classList.add('active');
+		} else {
+			let prevThumb = thumbnails[currentIndex];
+			prevThumb.classList.remove('active');
+			targetThumb.classList.add('active');
+		}
+
 		currentIndex = index;
 	}
 
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			// 	prevThumb.src, targetThumb.src)
 			prevThumb.classList.remove('active');
 			targetThumb.classList.add('active');
+			targetThumb.scrollIntoView({ behavior: 'smooth', inline: 'center' });
 			currentIndex = index;	
 		}
 	});  

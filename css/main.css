@@ -1,84 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.25;
-    overflow-x: hidden;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	overflow-x: hidden;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #333;
-    color: #fff;
-    padding: 10px 10px;
-    z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100dvw;
+	height: 8dvh;
+	background: #d3d3d3;
+	background-image: url(../images/blinds-header.png);
+	background-size: cover;
+	background-repeat: round;
+	color: #454545;
+	padding: 10px 10px;
+	z-index: 1000;
 }
 
-header h1 {
-    font-size: 24px;
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 95%;
+	max-width: 1200px;
 }
 
-header p {
-    font-size: 14px;
+.logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	height: 8dvh;
+	margin-right: 10px;
+	align-items: center;
+}
+
+.company-name {
+	font-size: 4vw;
+	color: #373434; /* Ensure it contrasts with the background */
+	align-self: center;
+}
+
+.social-media {
+	display: flex;
+	gap: 25px;
+}
+
+.social-icon img {
+	height: 30px;
+	transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+	transform: scale(1.1);
 }
 
 .parallax-section {
-    margin-top: 100px;
-    position: relative;
+	margin-top: 1px;
+	position: relative;
+	top: 120px; /* start after header height */
+	height: auto;
 }
 
 .parallax-image {
-    width: calc(100vw - 150px); /*Adjust width - thumbnail width */
-    height: calc(100vh - 90px); /* Adjust height to fit viewport minus header */
-    /* background-size: contain; /* Resize image to fit within the viewport */
-    background-size: calc(100vw - 180px) auto; /* Resize image to fit within the viewport */
-    background-repeat: no-repeat; /* Prevent image tiling */
-    background-attachment: fixed;
-    background-position: 0.80vh;
-    margin-bottom: 20px; /* creates white rectangle for parallax */
+	width: 100%;/*calc(100vw - 150px); /*Adjust width - thumbnail width */
+	height: 100dvh;/*calc(100vh - 245px); /* Adjust height to fit viewport minus header */
+	background-size: contain; /* Resize image to fit within the viewport */
+	background-size: 96dvw 74dvh; /* Resize image to fit within the viewport */
+	background-repeat: no-repeat; /* Prevent image tiling */
+	background-attachment: fixed;
+	background-position: center;
+	margin-bottom: 15px; /* creates white rectangle for parallax */
 }
 
 .thumbnail-section {
-    position: fixed;
-    /* Align thumbnails with the top of the visible area */
-    top: 80px;
-    right: 0;
-    /* Set a fixed width for thumbnails */
-    width: 150px;
-    background: #fff;
-    border-left: 2px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 1000;
-    /* Full height minus top alignment */
-    height: calc(100vh - 80px);
-    overflow-y: auto;
+	position: fixed;
+	left: 0px;
+	bottom: 5px;
+	height: 12dvh;
+	width: 100%;
+	background: #f1f0f0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 7px;
+	z-index: 1000;
+	overflow-x: auto;
 }
 
 .thumbnail-section img {
-    width: 100px;
-    height: 100px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: transform 0.3s;
+	width: 7dvh;
+	height: 7dvh;
+	margin: 0 10px;
+	cursor: pointer;
+	resize: both;
+	transition: transform 0.3s;
 }
 
 .thumbnail-section img:hover {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .thumbnail-section img.active {
-    border: 2px solid #333;
-    border-radius: 5px;
-    transform: scale(1.3);
+	border: 2px solid #b87b1f;
+	border-radius: 5px;
+	transform: scale(1.2);
 }
