@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.25;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 10px 10px;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+.parallax-section {
+    margin-top: 100px;
+    position: relative;
+}
+
+.parallax-image {
+    width: calc(100vw - 150px); /*Adjust width - thumbnail width */
+    height: calc(100vh - 90px); /* Adjust height to fit viewport minus header */
+    /* background-size: contain; /* Resize image to fit within the viewport */
+    background-size: calc(100vw - 180px) auto; /* Resize image to fit within the viewport */
+    background-repeat: no-repeat; /* Prevent image tiling */
+    background-attachment: fixed;
+    background-position: 0.80vh;
+    margin-bottom: 20px; /* creates white rectangle for parallax */
+}
+
+.thumbnail-section {
+    position: fixed;
+    /* Align thumbnails with the top of the visible area */
+    top: 80px;
+    right: 0;
+    /* Set a fixed width for thumbnails */
+    width: 150px;
+    background: #fff;
+    border-left: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    /* Full height minus top alignment */
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.thumbnail-section img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.thumbnail-section img:hover {
+    transform: scale(1.2);
+}
+
+.thumbnail-section img.active {
+    border: 2px solid #333;
+    border-radius: 5px;
+    transform: scale(1.3);
+}
