@@ -85,6 +85,10 @@ header {
 		background-attachment: scroll;
 		background-size: 96dvw 74dvh; /* Resize image to fit within the viewport */
 	}
+	.parallax-section {
+		background-image: none;
+		background-color: #ffffff;
+	}
 }
 
 .thumbnail-section {
