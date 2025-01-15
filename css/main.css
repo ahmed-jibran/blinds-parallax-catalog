@@ -8,7 +8,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100dvw;
-	height: 8dvh;
+	height: 9dvh;
 	background: #d3d3d3;
 	background-image: url(../images/blinds-header.png);
 	background-size: cover;
@@ -58,21 +58,33 @@ header {
 	transform: scale(1.1);
 }
 
+.spacer {
+	width: 100%;
+	height: 12dvh;
+}
+
 .parallax-section {
-	margin-top: 1px;
 	position: relative;
-	top: 120px; /* start after header height */
-	height: auto;
+	height: 74dvh;
+	background-image: url(../images/background.png);
 }
 
 .parallax-image {
 	width: 100%;
 	height: 74dvh;
-	background-size: 96dvw 74dvh; /* Resize image to fit within the viewport */
+	background-size: 74dvw 74dvh; /* Resize image to fit within the viewport */
 	background-repeat: no-repeat; /* Prevent image tiling */
-	/* background-attachment: fixed; */
+	background-attachment: fixed;
 	background-position: center;
 	margin-bottom: 15px; /* creates white rectangle for parallax */
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+	.parallax-image {
+		background-attachment: scroll;
+		background-size: 96dvw 74dvh; /* Resize image to fit within the viewport */
+	}
 }
 
 .thumbnail-section {
@@ -86,15 +98,15 @@ header {
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 0 7px;
 	z-index: 1000;
-	overflow-x: auto;
+	overflow-x: scroll;
 }
 
 .thumbnail-section img {
 	width: 7dvh;
 	height: 7dvh;
-	margin: 0 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 	cursor: pointer;
 	resize: both;
 	transition: transform 0.3s;
