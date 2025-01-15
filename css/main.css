@@ -65,14 +65,14 @@ header {
 
 .parallax-section {
 	position: relative;
-	height: 74dvh;
-	background-image: url(../images/background.png);
+	height: 100%;
+	background-image: url(../images/background2.png);
 }
 
 .parallax-image {
 	width: 100%;
 	height: 74dvh;
-	background-size: 74dvw 74dvh; /* Resize image to fit within the viewport */
+	background-size: 54dvw 74dvh; /* Resize image to fit within the viewport */
 	background-repeat: no-repeat; /* Prevent image tiling */
 	background-attachment: fixed;
 	background-position: center;
